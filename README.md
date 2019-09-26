@@ -1,3 +1,5 @@
+##这是我传的第一个自己的项目
+基于angular框架，一个仿elm的点餐系统。单纯的前端界面，mock放在了easymock上。纯粹好玩嘿嘿
 # Angularproject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
