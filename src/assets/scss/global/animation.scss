@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+/**
+ * @desciption dora.animation 样式模块 - 常用的动画样式定义
+ * @author lizy
+ * @lastModified 2016-08-29
+ * @maintainers guojm
+ */
+
+// 元素旋转动画
+@include keyframes(spin) {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

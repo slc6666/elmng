@@ -1,0 +1,60 @@
+.cartbutton {
+    //  font-size: 0;
+
+    .cartbutton-decrease {
+        display: inline-block;
+        padding: 6px;
+        color: rgb(0, 100, 220);
+
+        .fa-minus-circle {
+            display: inline-block;
+            font-size: 24px !important;
+            line-height: 24px;
+        }
+    }
+
+    // // 动画部分
+    // .fade-enter,
+    //     {
+    //     opacity: 0;
+    //     transform: translate3d(24px, 0, 0);
+    // }
+    // .fade-enter-to,
+    //     {
+    //     opacity: 1;
+    //     transform: translate3d(0, 0, 0) rotate(180deg); // transform: rotate(180deg);
+    // }
+    // .fade-leave {
+    //     opacity: 1;
+    //     transform: translate3d(0, 0, 0);
+    // }
+    // .fade-leave-to {
+    //     opacity: 0;
+    //     transform: translate3d(24px, 0, 0) rotate(180deg); // transform: rotate(-180deg);
+    // }
+    // .fade-enter-active,
+    // .fade-leave-active {
+    //     transition: all 0.4s ease;
+    // } // 动画部分
+    .cartbutton-count {
+        display: inline-block;
+        font-size: 10px;
+        width: 12px;
+        line-height: 24px;
+        vertical-align: top;
+        color: rgb(147, 153, 159);
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .cartbutton-add {
+        display: inline-block;
+        padding: 6px;
+        color: rgb(0, 100, 220);
+
+        .fa {
+            font-size: 24px !important;
+            line-height: 24px;
+        }
+    }
+}

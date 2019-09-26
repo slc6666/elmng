@@ -1,0 +1,228 @@
+@charset "utf-8";
+/**
+ * @desciption dora.base 样式模块 - 全局重设样式定义：参考自alice.base
+ * @author lizy
+ * @lastModified 2016-08-23
+ * @maintainers guojm
+ */
+
+/* 全局定义网页文本颜色和背景颜色 */
+
+html {
+    color: #333;
+    background: #f3f6f8;
+    -webkit-text-size-adjust: 100%; // 关闭字体大小自动调整
+
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5 "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+input,
+select,
+textarea {
+    font-size: 100%;
+    -webkit-appearance: none; // 屏蔽默认外观
+}
+
+/* 去掉各Table cell 的边距并让其边重合 */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 去除默认边框 */
+
+fieldset,
+img {
+    border: 0;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+/* 一致的 del 样式 */
+
+del {
+    text-decoration: line-through;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* 去掉列表项标记 */
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+
+caption,
+th {
+    text-align: left;
+}
+
+/* 统一各浏览器的标题字体设置 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+q:before,
+q:after {
+    content: '';
+}
+
+/* 统一上标和下标 */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.25em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* 链接 */
+
+a:link,
+a:visited {
+    color: #3b98dc;
+    outline: 0;
+}
+
+a:active {
+    opacity: 0.5;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+
+a,
+ins {
+    text-decoration: none;
+}
+
+/* 代码字体 */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/* 小字体 */
+
+small {
+    font-size: 100%;
+}
+
+// 补充样式 - start
+/* 屏蔽点击元素时出现的阴影 */
+
+a,
+label,
+input,
+select,
+textarea,
+div {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    outline: none;
+}
+
+/* 禁止长按链接与图片弹出菜单 */
+
+a,
+img {
+    -webkit-touch-callout: none;
+}
+
+// 补充样式 - end
+//字体自适应
+// @media (max-width: 767px) {
+//     //CSS代码 
+//     font-size: 50px !important;
+// } // 屏幕宽度在767和991象素之间的CSS样式
+// @media (min-width: 768px) and (max-width: 991px) {
+//     //CSS代码 
+// }

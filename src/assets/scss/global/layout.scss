@@ -1,0 +1,95 @@
+@charset "utf-8";
+$statusbar-height: 0px; // 状态栏高度
+$header-height: 44px; // 头部导航高度
+$top-height: $header-height+$statusbar-height; // 顶部高度
+* {
+    @include box-sizing(border-box);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+// 页面滑动容器
+.page-slide-wrap {
+    height: 100%;
+}
+
+#page {
+    height: 100%;
+    .page-wrap {
+        height: 100%;
+    }
+}
+
+// 头部
+#header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-top: $statusbar-height;
+    height: $top-height;
+    line-height: $header-height;
+    background: $color-blue;
+    z-index: 1;
+    h1 {
+        position: absolute;
+        left: 50px;
+        right: 50px;
+        height: $header-height;
+        bottom: 0;
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+    } // 返回按钮
+    .back {
+        position: relative;
+        float: left;
+        font-size: 0;
+        width: 48px;
+        height: 100%;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 14px;
+            left: 16px;
+            width: 16px;
+            height: 17px;
+            background: #{$icon-url} no-repeat;
+            background-size: $icon-size;
+            background-position: 0 -339px;
+        }
+    } // 退出/登录按钮
+    .userMsg {
+        position: absolute;
+        right: 15px;
+        font-size: 14px;
+        color: #fff;
+        span {
+            vertical-align: top;
+        }
+    }
+    .exit,
+    .msg {
+        float: right;
+        margin-right: 15px;
+        font-size: 15px;
+        color: #fff;
+    }
+}
+
+#content {
+    position: absolute;
+    width: 100%;
+    top: $top-height;
+    bottom: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.content-wrap {
+    position: relative;
+    padding-bottom: 40px;
+}

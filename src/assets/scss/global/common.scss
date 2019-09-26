@@ -1,0 +1,211 @@
+// @charset "utf-8";
+
+// /**
+//  * @desciption dora.common 样式模块 - 全局的SCSS变量和混合设置、辅助功能样式定义
+//  * @author guojm
+//  * @lastModified 2017-08-09
+//  * @maintainers guojm
+//  */
+
+// // 图片路径
+// // $images-url: "../images/";
+// // $images-common-url: "../images/";
+// // sprite图片路径
+// // $icon-url: url("#{$images-url}icon.png");
+// // sprite图片大小（两倍率）
+// // $icon-size: 215px 388px;
+// // // 蓝色
+// // $color-blue: #3b76d8;
+// // // 橙色
+// // $color-orange: #ff6521;
+// // // 浅黑色
+// // $color-lightblack: #aaa;
+// // // 深黑色
+// // $color-darkblack: #4a4a4a;
+// // // 浅灰色
+// // $color-lightgray: #e5e5e5;
+// // // 深灰色
+// // $color-darkgray: #a7abb2;
+// // // 绿色
+// // $color-green: #10c7af;
+
+// // /* 文字颜色 */
+
+// // // 橙色
+// // .color-orange {
+// //     color: $color-orange;
+// // }
+
+// // // 绿色
+// // .color-green {
+// //     color: $color-green;
+// // }
+
+// // // 蓝色
+// // .color-blue {
+// //     color: $color-blue;
+// // }
+
+// // .icon-rightarrow {
+// //     content: "";
+// //     display: inline-block;
+// //     width: 7px;
+// //     height: 11px;
+// //     // background: $icon-url no-repeat;
+// //     // background-size: $icon-size;
+// //     background-position: 0 -358px;
+// // }
+
+// // // 初始层：ui-am-page=ui-am-notice=ui-am-slide=99; ui-tipup=2; ui-tipup-overlay=3; ui-tipup-overlay-fixed=4;
+// // $z-index: 0;
+// // // ------------------------------------------------------------
+// // // 圆角：@include radius(0px);
+// // @mixin radius ($value: 3px) {
+// //     -webkit-border-radius: $value;
+// //     border-radius: $value;
+// // }
+
+// // // 盒模型：@include box-sizing(border-box);
+// // @mixin box-sizing($value: content-box) {
+// //     -webkit-box-sizing: $value;
+// //     box-sizing: $value;
+// // }
+
+// // // 盒阴影：@include box-shadow(0px 1px 2px 0px rgba(0, 0, 0, 0.5));
+// // @mixin box-shadow($value) {
+// //     // h-shadow v-shadow blur spread color inset 水平阴影位置-必需，垂直阴影位置-必需，模糊距离，阴影尺寸，阴影颜色，内部阴影
+// //     -webkit-box-shadow: $value;
+// //     box-shadow: $value;
+// // }
+
+// /** flex布局 - start */
+
+// // flex容器：@include flexbox();
+// @mixin flexbox() {
+//     display: -webkit-box;
+//     display: -webkit-flex;
+//     display: flex;
+// }
+
+// // flex布局方向：@include flex-direction(row-reverse);
+// @mixin flex-direction($value: row) {
+//     -webkit-flex-direction: $value;
+//     flex-direction: $value;
+// }
+
+// // flex项目：@include flex(1 1 90px);
+// @mixin flex($value: 0 1 auto) {
+//     display: block; // 兼容ios低版本
+//     -webkit-box-flex: $value;
+//     -webkit-flex: $value;
+//     flex: $value;
+// }
+
+// // flex项目：@include order(1);
+// @mixin order($value: 0) {
+//     -webkit-box-ordinal-group: $value + 1;
+//     -webkit-order: $value;
+//     order: $value;
+// }
+
+// // flex项目：@include align-self(center);
+// @mixin align-self($value: center) {
+//     -webkit-align-self: $value;
+//     align-self: $value;
+// }
+
+
+// /** flex布局 - end */
+
+// // 设置CSS属性的过渡效果：@include transition(all, 0.2s, ease, 0s);
+// @mixin transition($prop: all,
+// $dura: 0,
+// $func: linear,
+// $delay: 0) {
+//     -webkit-transition: $prop $dura $func $delay;
+//     transition: $prop $dura $func $delay;
+// }
+
+// // 线性渐变 @include linear-gradient(left, #000, #fff);
+// @mixin linear-gradient($direction,
+// $color-stops...) {
+//     background: -webkit-linear-gradient($direction, $color-stops);
+//     background: linear-gradient($direction, $color-stops);
+// }
+
+// // ------------------------------------------------------------
+// // 对元素进行2D旋转，默认45度：@include transform-rotate(225deg);
+// @mixin transform-rotate($v: 45deg) {
+//     -webkit-transform: rotate($v);
+//     transform: rotate($v);
+// }
+
+// // 元素沿X轴平移：@include transform-translateX(-100%);
+// @mixin transform-translateX($x) {
+//     -webkit-transform: translateX($x);
+//     transform: translateX($x);
+// }
+
+// // 元素沿Y轴平移：@include transform-translateY(-100%);
+// @mixin transform-translateY($y) {
+//     -webkit-transform: translateY($y);
+//     transform: translateY($y);
+// }
+
+// // 3D变换：@include transform-translate3d(100%,0,0);
+// @mixin transform-translate3d($x,
+// $y,
+// $z) {
+//     -webkit-transform: translate3d($x, $y, $z);
+//     transform: translate3d($x, $y, $z);
+//     -webkit-backface-visibility: hidden;
+//     backface-visibility: hidden;
+//     -webkit-transform-style: preserve-3d;
+//     transform-style: preserve-3d;
+// }
+
+// // 自定义动画 --------------------
+// // .ui-am-moveToLeft {@include animation(moveToLeft .6s ease both);}
+// @mixin animation($animation) {
+//     -webkit-animation: $animation;
+//     animation: $animation;
+// }
+
+// // @include keyframes(moveToLeft) {to {@include transform-translateX(-100%);}}
+// @mixin keyframes($name) {
+//     @-webkit-keyframes #{$name} {
+//         @content;
+//     }
+//     @keyframes #{$name} {
+//         @content;
+//     }
+// }
+
+// // ------------------------------------------------------------
+// // 辅助功能样式定义 - start
+
+// /* 单行文字溢出时出现省略号，需设定宽度 */
+
+// .fn-text-overflow {
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+// }
+
+
+// /* 在父元素上清除浮动 */
+
+// .fn-clearfix:after {
+//     visibility: hidden;
+//     display: block;
+//     font-size: 0;
+//     content: " ";
+//     clear: both;
+//     height: 0;
+// }
+
+// .fn-hide {
+//     display:none;
+// }
+
+// // 辅助功能样式定义 - end

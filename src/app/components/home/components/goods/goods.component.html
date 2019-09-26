@@ -1,0 +1,40 @@
+<div class="goods-container">
+  <div class="menu-wrapper">
+    <ul>
+      <li *ngFor='let item of goods; let index = index' class="menu-item" [ngClass]="{'current':currentIndex === index}"
+        (click)='selectMenu(index,$event)'>
+        <span class="text">{{item.name}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="foods-wrapper flexbox">
+    <ul>
+      <li *ngFor='let item of goods' class="food-list">
+        <h1 class="list-title">{{item.name}}</h1>
+        <ul>
+          <li *ngFor='let food of item.foods' class="food-item">
+            <div class="icon">
+              <img [src]="food.icon" alt="" width="57" height="57">
+            </div>
+            <div class="content">
+              <h2 class="name">{{food.name}}</h2>
+              <p class="desc">{{food.description}}</p>
+              <div class="extra">
+                <span class="count">月售{{food.sellCount}}份</span>
+                <span>好评率{{food.rating}}%</span>
+              </div>
+              <div class="price">
+                <span class="now">￥{{food.price}}</span>
+                <span class="old" *ngIf="food.oldPrice">￥{{food.oldPrice}}</span>
+              </div>
+              <div class="button-wrapper">
+                <app-cartbutton [food]="food" (outer)="cartAdd($event)"></app-cartbutton>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <app-shopcart [goods]="goods" [seller]="seller" #shopCart></app-shopcart>
+</div>

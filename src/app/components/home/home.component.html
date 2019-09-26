@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="header">
+    <div class="main">
+      <div class="left-img">
+
+        <img [src]="seller.avatar" width="64" height="64">
+
+      </div>
+      <div class="right-text">
+        <div class="title">
+          <span class="brand"></span>
+          <span class="name">{{seller.name}}</span>
+        </div>
+        <div class="description">{{seller.description}}/{{seller.deliveryTime}}分钟送达;</div>
+        <div class="support" *ngIf="seller.supports">
+          <span class="icon"></span>
+          <span class="support-text">{{seller.supports[0].description}}</span>
+        </div>
+        <div class="support-count" *ngIf="seller.supports" (click)="showDetalis()">
+          <span class="count">{{seller.supports.lenght}}ss</span>
+          <i class="fa fa-angle-right"></i>
+        </div>
+      </div>
+    </div>
+    <div class="header-footer" (click)="showDetalis()">
+      <span class="header-footer-title"></span>
+      <span class="header-footer-text">{{seller.bulletin}}</span>
+      <i class="fa fa-angle-right"></i>
+    </div>
+    <div class="background">
+      <img [src]="seller.avatar" width="100%" height="100%">
+    </div>
+    <div class="details" *ngIf="showDetails">
+      <div class="details-wrapper clear">
+        <div class="details-main">
+          <h1>{{seller.name}}</h1>
+          <div class="star-wrapper">
+            <!-- <star [size]="48" [score]="3.8"></star> -->
+          </div>
+          <div class="star-title">
+            <div class="line"></div>
+            <div class="text">优惠信息</div>
+            <div class="line"></div>
+          </div>
+          <ul *ngIf="seller.supports" class="supports">
+            <li class="supports-item" *ngFor="let item of seller.supports">
+              <span class="supports-description">{{item.description}}</span>
+            </li>
+          </ul>
+          <div class="star-title">
+            <div class="line"></div>
+            <div class="text">商家公告</div>
+            <div class="line"></div>
+          </div>
+          <div class="last-p">
+            <p class="last-p-content">{{seller.bulletin}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="details-close" (click)="showClose()">
+        <i class="fa fa-close"></i>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="nav">
+    <a routerLink="components/goods" class="router-link flex1" routerLinkActive='nav-active'>
+      <div class="nav-item">商品</div>
+    </a>
+    <a routerLink="components/comment" class="router-link flex1" routerLinkActive='nav-active'>
+      <div class="nav-item">评论</div>
+    </a>
+    <a routerLink="components/seller" class="router-link flex1" routerLinkActive='nav-active'>
+      <div class="nav-item">商家</div>
+    </a>
+
+  </div>
+
+  <router-outlet></router-outlet>
+  <div class="content">
+
+
+
+
+
+
+  </div>
+</div>
+<div class="bg" id="bg">
+
+
+</div>

@@ -1,0 +1,48 @@
+<div class="shopcart-container">
+  <div class="content">
+    <div class="content-left" (click)="toggleList()">
+      <div class="logo-wrapper">
+        <div class="logo" [ngClass]="{'highlight':totalcount>0}">
+          <i class="fa fa-shopping-cart" [ngClass]="{'highlight':totalcount>0}"></i>
+        </div>
+        <div class="num" [ngClass]="{'hide':totalcount==0||totalcount===undefined}">{{totalcount}}</div>
+      </div>
+      <div class="price" [ngClass]="{'highlight':totalcount>0}">￥{{totalprice}}</div>
+      <div class="desc">另需配送费￥2</div>
+    </div>
+    <div class="content-right">
+      <div class="pay" [ngClass]="payclass">{{paydesc}}</div>
+    </div>
+  </div>
+  <div class="ball-container">
+    <!-- <transition-group name="drop"> -->
+    <!-- <div *ngFor="let(ball,index) in balls" *ngIf="ball.show" class="ball" [key]="index">
+      <div class="inner"></div>
+    </div> -->
+    <!-- </transition-group> -->
+  </div>
+  <!-- <transition name="fold"> -->
+  <div class="shopcart-list" [hidden]="listshow">
+    <div class="list-header">
+      <h1 class="title">购物车</h1>
+      <span class="empty" (click)="clearFoods()">清空</span>
+    </div>
+    <div class="list-content">
+      <ul>
+        <li class="food" *ngFor="let food of foods">
+          <span class="name">{{food.name}}</span>
+          <div class="price">
+            <span>￥{{food.price*food.count}}</span>
+          </div>
+          <div class="cartbutton-wrapper">
+            <app-cartbutton [food]='food' (outer)="viewTest($event)" #cartButton></app-cartbutton>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- </transition> -->
+  <!-- <transition name="show"> -->
+  <div class="mask" *ngIf="listshow" (click)="toggleList"></div>
+  <!-- </transition> -->
+</div>

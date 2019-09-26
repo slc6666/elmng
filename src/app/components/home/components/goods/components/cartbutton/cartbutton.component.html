@@ -1,0 +1,12 @@
+<div class="cartbutton">
+  <!-- <transition name="fade"> -->
+  <div class="cartbutton-decrease" *ngIf="food.count>0" (click)="decreaseButton($event)">
+    <span class="fa fa-minus-circle"></span>
+  </div>
+  <!-- </transition> -->
+  <div class="cartbutton-count" *ngIf="food.count>0">{{food.count}}</div>
+
+  <div class="cartbutton-add" (click)="addButton($event)">
+    <i class="fa fa-plus-circle"></i>
+  </div>
+</div>
